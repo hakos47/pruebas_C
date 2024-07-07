@@ -3,7 +3,7 @@ BUILDDIR = build
 SRCDIR = src
 
 # Lista de archivos fuente
-SOURCE = $(SRCDIR)/main.c
+SOURCE = $(wildcard $(SRCDIR)/*.c)
 
 # Objetos correspondientes a los archivos fuente
 OBJECTS = $(SOURCE:$(SRCDIR)/%.c=$(BUILDDIR)/%.o)
@@ -22,7 +22,6 @@ $(EXECUTABLE): $(OBJECTS)
 $(BUILDDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(BUILDDIR)   # Asegura que el directorio de construcción exista
 	$(CC) $(CFLAGS) -c $< -o $@
-	
 
 # Regla para limpiar archivos generados
 clean:
