@@ -26,3 +26,6 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.c
 # Regla para limpiar archivos generados
 clean:
 	rm -f $(BUILDDIR)/*.o $(EXECUTABLE)
+
+test:
+	./$(BUILDDIR)/pruebas
